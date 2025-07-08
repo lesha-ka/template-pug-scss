@@ -6,5 +6,4 @@
 * ```yarn run build:images``` - собрать изображения
 * ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
 * ```yarn run build:sprites```- собрать спрайты
-* ```yarn run build:gzip``` - собрать конфигурацию Apache
 * ```yarn run lint:scripts``` - проверить JS-файлы

@@ -43,6 +43,7 @@ module.exports = {
 
     resolve: {
         alias: {
+            "%utils%": path.resolve(__dirname, "src/js/utils"),
             "%modules%": path.resolve(__dirname, "src/blocks/modules"),
             "%components%": path.resolve(__dirname, "src/blocks/components")
         }

@@ -54,10 +54,6 @@ const requireDir = require("require-dir"),
             src: "./src/fonts/**/*.{ttf,woff,woff2}",
             dist: "./dist/fonts/",
             watch: "./src/fonts/**/*.{ttf,woff,woff2}"
-        },
-        gzip: {
-            src: "./src/.htaccess",
-            dist: "./dist/"
         }
     };
 
@@ -70,6 +66,6 @@ export const development = gulp.series("clean",
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "files", "gzip"]));
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "files"]));
 
 export default development;
