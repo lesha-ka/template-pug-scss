@@ -1,0 +1,50 @@
+@use "helpers/_mixins.scss" as mixins;
+@use "helpers/_variables.scss" as var;
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+
+    --sb: calc(100vw - 100%);
+    --vw: calc(100vw - var(--sb));
+
+    --container-max-width: 1200px;
+    --container-min-field: 1rem;
+    --container-field: calc((var(--vw) - var(--container-max-width)) / 2);
+
+    --font-inter: "Inter", -apple-system, Arial, sans-serif;
+    @include mixins.tablet {
+        --container-min-field: 1.5rem;
+    }
+    @include mixins.desktop {
+        --container-max-width: 1400px;
+    }
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--font-inter);
+}
+body {
+    overflow-x: hidden;
+    min-height: 100dvh;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding-inline: max(var(--container-field), var(--container-min-field));
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,139 @@
+@use "./_variables.scss" as var;
+
+@mixin svg-mask($img) {
+    mask-image: url("../img/sprites/sprite.svg##{$img}");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-center-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+@mixin flex-end-end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+@mixin flex-center-space {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-column-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin flex-column-center-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-column-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@mixin pseudo-center {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+@mixin pseudo-right {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin pseudo-left {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+@mixin scrollbar {
+    scrollbar-color: var(--scrollbar);
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        scrollbar-width: initial;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--scrollbar-bg);
+        border-radius: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar);
+        border-radius: 3px;
+    }
+}
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+@mixin tablet {
+    @media (min-width: var.$tablet) {
+        @content;
+    }
+}
+@mixin tablet-big {
+    @media (min-width: var.$tablet-big) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: var.$laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: var.$desktop) {
+        @content;
+    }
+}
+
+@mixin fullhd {
+    @media (min-width: var.$fullhd) {
+        @content;
+    }
+}
