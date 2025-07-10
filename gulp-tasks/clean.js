@@ -5,8 +5,6 @@ import del from "del";
 
 gulp.task("clean", () => {
     return del([
-        "./dist/**/*",
-        "!./dist/fonts",
-        "!./dist/fonts/**"
+        "./dist/**/*"
     ]);
 });
